@@ -134,6 +134,12 @@ class UserPreferencesRepository private constructor(context: Context) {
         }
     }
 
+    suspend fun counter(){
+        dataStore.updateData { preferences ->
+            preferences.toBuilder().setCounter(preferences.counter + 1).build()
+        }
+    }
+
     companion object {
         @Volatile
         private var INSTANCE: UserPreferencesRepository? = null

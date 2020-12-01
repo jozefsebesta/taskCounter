@@ -33,7 +33,7 @@ data class TasksUiModel(
     val tasks: List<Task>,
     val showCompleted: Boolean,
     val sortOrder: UserPreferences.SortOrder,
-    val counter: Int
+    val counter: Long
 )
 
 // MutableStateFlow is an experimental API so we're annotating the class accordingly
@@ -108,9 +108,9 @@ class TasksViewModel(
         }
     }
 
-    fun Counter(){
+    fun appCounter(){
         viewModelScope.launch {
-            userPreferencesRepository.taskCounter()
+            userPreferencesRepository.counter()
         }
     }
 }

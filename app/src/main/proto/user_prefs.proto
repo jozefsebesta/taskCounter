@@ -19,5 +19,5 @@ message UserPreferences {
   // user selected tasks sorting order
   SortOrder sort_order = 2;
 
-  int64 counter = 15;
+  int64 counter = 5;
 }
